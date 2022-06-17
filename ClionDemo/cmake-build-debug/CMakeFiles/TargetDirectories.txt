@@ -1,0 +1,3 @@
+C:/Users/liuzhaoxuchn/Desktop/ClionDemo/cmake-build-debug/CMakeFiles/ClionDemo.elf.dir
+C:/Users/liuzhaoxuchn/Desktop/ClionDemo/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/liuzhaoxuchn/Desktop/ClionDemo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
