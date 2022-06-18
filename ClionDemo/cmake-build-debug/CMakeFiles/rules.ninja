@@ -17,7 +17,7 @@
 rule ASM_COMPILER__ClionDemo.2eelf_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = D:\stm32cubeTools\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = C:\PROGRA~2\GNUARM~1\102021~1.10\bin\AR19DD~1.EXE $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building ASM object $out
 
 
@@ -27,7 +27,7 @@ rule ASM_COMPILER__ClionDemo.2eelf_Debug
 rule C_COMPILER__ClionDemo.2eelf_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = D:\stm32cubeTools\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = C:\PROGRA~2\GNUARM~1\102021~1.10\bin\AR19DD~1.EXE $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building C object $out
 
 
@@ -35,7 +35,7 @@ rule C_COMPILER__ClionDemo.2eelf_Debug
 # Rule for linking C executable.
 
 rule C_EXECUTABLE_LINKER__ClionDemo.2eelf_Debug
-  command = cmd.exe /C "$PRE_LINK && D:\stm32cubeTools\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $FLAGS $LINK_FLAGS @$RSP_FILE -o $TARGET_FILE  && $POST_BUILD"
+  command = cmd.exe /C "$PRE_LINK && C:\PROGRA~2\GNUARM~1\102021~1.10\bin\AR19DD~1.EXE $FLAGS $LINK_FLAGS @$RSP_FILE -o $TARGET_FILE  && $POST_BUILD"
   description = Linking C executable $TARGET_FILE
   rspfile = $RSP_FILE
   rspfile_content = $in $LINK_PATH $LINK_LIBRARIES
@@ -54,7 +54,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = "D:\Program Files\JetBrains\CLion 2022.1.2\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\liuzhaoxuchn\Desktop\ClionDemo -BC:\Users\liuzhaoxuchn\Desktop\ClionDemo\cmake-build-debug
+  command = "E:\Program Files\JetBrains\CLion 2022.1\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SF:\SeerLikeJazz\MarkdownTest\ClionDemo -BF:\SeerLikeJazz\MarkdownTest\ClionDemo\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
@@ -63,7 +63,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = "D:\Program Files\JetBrains\CLion 2022.1.2\bin\ninja\win\ninja.exe" $FILE_ARG -t clean $TARGETS
+  command = "E:\Program Files\JetBrains\CLion 2022.1\bin\ninja\win\ninja.exe" $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -71,6 +71,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = "D:\Program Files\JetBrains\CLion 2022.1.2\bin\ninja\win\ninja.exe" -t targets
+  command = "E:\Program Files\JetBrains\CLion 2022.1\bin\ninja\win\ninja.exe" -t targets
   description = All primary targets available:
 

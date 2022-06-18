@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "spi.h"
 #include "gpio.h"
 
@@ -88,14 +89,14 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   LCD_Init();
     lv_init();
     lv_port_disp_init();
-    static lv_style_t style_indic;
-    lv_style_init(&style_indic);
-    lv_style_set_bg_color(&style_indic, lv_palette_lighten(LV_PALETTE_GREY, 1));
+lv_color_t bg_color = lv_color_make(0xF8,0x00,0x00);
+    lv_obj_set_style_bg_color(lv_scr_act(),bg_color,0);
 
   /* USER CODE END 2 */
 
@@ -104,9 +105,10 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
       HAL_Delay(3);
       lv_task_handler();
-    /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -125,6 +127,14 @@ void SystemClock_Config(void)
   __HAL_RCC_PWR_CLK_ENABLE();
   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
 
+
+    //先将时钟源选择为内部时钟
+    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_SYSCLK;
+    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+    {
+        Error_Handler();
+    }
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
