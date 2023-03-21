@@ -1,3 +1,0 @@
-F:/SeerLikeJazz/MarkdownTest/ClionDemo/cmake-build-debug/CMakeFiles/ClionDemo.elf.dir
-F:/SeerLikeJazz/MarkdownTest/ClionDemo/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/SeerLikeJazz/MarkdownTest/ClionDemo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
